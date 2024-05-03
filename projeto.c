@@ -38,27 +38,82 @@ void interface()
 }
 
 
+
+
+
 int main()
 {
-    int operacao;
+  int operacao;
 
-    interface();
+  interface();
 
-    printf("Digite o numero da operacao abaixo, ou '7' para sair\n");
-    scanf("%d\n", operacao);
+  printf("Digite o numero da operacao abaixo, ou 7 para sair\n");
+  scanf("%d\n", &operacao);
 
+  while(operacao!=7)
+  {
     if(operacao == 1)
     {
-        soma();
+      int n; //quantidade de numeros que serao somados
+
+      printf("Coloque a quantidade de numeros que serao somados abaixo:\n");
+      scanf("%d\n", &n);
+
+      soma(n);      
     }
 
     else if(operacao == 2)
     {
-        subtracao();
+      int n; //qntd de numeros que serao subtraidos
+
+      printf("Coloque a quantidade de numeros que serao subtraidos abaixo:\n");
+      scanf("%d", &n);
+
+      subtracao(n);
     }
 
+    else if(operacao == 3)
+    {
+      int n;
 
+      printf("Coloque a quantidade de numeros que participarao da multiplicacao abaixo:\n");
+      scanf("%d", &n);
 
+      multiplicacao(n);
+    }
+
+    else if(operacao == 4)
+    {
+      int n;
+
+      printf("Coloque a quantidade de numeros que participarao da divisao abaixo:\n");
+      scanf("%d", &n);
+
+      divisao(n);
+    }
+
+    else if(operacao == 5)
+    {
+      double base;
+
+      printf("(Na potenciacao, temos o padrao X^Y, em que X eh a base e Y eh o expoente)\n\n");
+      printf("Digite o valor da base:\n");
+      scanf("%lf", &base);
+
+      potenciacao(base);
+    }
+
+    else if(operacao == 6)
+    {
+      double radicando;
+
+      printf("(Na potenciacao, temos o padrao X^1/Y, em que X eh o radicando e Y eh o indice)\n");
+      printf("Digite o valor do radicando:\n");
+      scanf("%lf", &radicando);
+
+      radiciacao();
+    }
+  }
 
 
     return 0;
